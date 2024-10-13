@@ -7,7 +7,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.view.activity.account.LoginActivity">
+        tools:context=".ui.view.account.LoginActivity">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/activity_login_tb"
@@ -16,16 +16,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:title="토스트" />
+             />
 
-        <fragment
-            android:name="com.example.newsjam_android.ui.view.activity.account.LikeChoiceFragment"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/activity_login_containerView"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:defaultNavHost="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_login_tb" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_login_tb"
+            app:navGraph="@navigation/nav_login_graph" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
