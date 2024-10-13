@@ -12,10 +12,8 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseActivity<VB: ViewBinding>(@LayoutRes private val layoutRes: Int):
     AppCompatActivity() {
-
     protected lateinit var binding: VB
     private var imm : InputMethodManager? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, layoutRes)
@@ -25,21 +23,14 @@ abstract class BaseActivity<VB: ViewBinding>(@LayoutRes private val layoutRes: I
 
         setLayout()
     }
-
     abstract fun setLayout()
-
-
-
     fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-
     fun startNextActivity(activity: Class<*>?) {
         val intent = Intent(this, activity)
         startActivity(intent)
     }
-
-
     fun startActivityWithClear(activity: Class<*>?) {
         val intent = Intent(this, activity)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

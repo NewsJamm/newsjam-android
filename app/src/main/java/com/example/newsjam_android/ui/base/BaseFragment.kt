@@ -16,9 +16,7 @@ import androidx.viewbinding.ViewBinding
 abstract class BaseFragment<VB : ViewBinding>(@LayoutRes private val layoutRes: Int) : Fragment() {
 
     private var _binding: VB? = null
-
     protected val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -27,17 +25,14 @@ abstract class BaseFragment<VB : ViewBinding>(@LayoutRes private val layoutRes: 
         _binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setLayout()
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
     fun NavController.navigateSafe(
         @IdRes resId: Int,
         args: Bundle? = null,
@@ -55,6 +50,5 @@ abstract class BaseFragment<VB : ViewBinding>(@LayoutRes private val layoutRes: 
             navigate(resId, args, newNavOptions.build(), navExtras)
         }
     }
-
     abstract fun setLayout()
 }
