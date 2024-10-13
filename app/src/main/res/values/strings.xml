@@ -2,4 +2,9 @@
     <string name="app_name">newsjam-android</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">시작하기</string>
+    <string name="my_page">마이페이지</string>
+    <string name="hot_topic">핫토픽</string>
+    <string name="news">뉴스</string>
+    <string name="search">검색</string>
 </resources>
