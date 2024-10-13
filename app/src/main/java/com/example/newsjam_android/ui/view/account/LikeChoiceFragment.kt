@@ -1,5 +1,6 @@
-package com.example.newsjam_android.ui.view.activity.account
+package com.example.newsjam_android.ui.view.account
 
+import androidx.navigation.fragment.findNavController
 import com.example.newsjam_android.R
 import com.example.newsjam_android.data.model.TagData
 import com.example.newsjam_android.databinding.FragmentLikeChoiceBinding
@@ -15,6 +16,13 @@ class LikeChoiceFragment : BaseFragment<FragmentLikeChoiceBinding>(R.layout.frag
     override fun setLayout() {
         setRecyclerView()
         loadTags()
+        setOnClickView()
+    }
+
+    private fun setOnClickView() {
+        binding.appCompatButton.setOnClickListener {
+            findNavController().navigate(R.id.action_likeChoiceFragment_to_hotNewsConfirmFragment)
+        }
     }
 
     private fun loadTags() {
@@ -26,7 +34,6 @@ class LikeChoiceFragment : BaseFragment<FragmentLikeChoiceBinding>(R.layout.frag
 
         likeChoiceAdapter.submitList(tags)
     }
-
 
     private fun setRecyclerView() {
         binding.fragmentLikeFlexBoxRv.apply {
