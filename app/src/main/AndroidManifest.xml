@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Newsjamandroid"
         tools:targetApi="31">
         <activity
-            android:name=".ui.view.activity.account.LoginActivity"
+            android:name=".ui.view.account.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.view.activity.home.MainActivity"
+            android:name=".ui.view.home.MainActivity"
             android:exported="true">
 
         </activity>
