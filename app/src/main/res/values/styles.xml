@@ -6,53 +6,63 @@
     </style>
 
     <style name="bold_text.20dp">
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="bold_text.16dp">
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">16sp</item>
         <item name="lineHeight">24dp</item>
     </style>
 
     <style name="bold_text.16dp.24he">
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">16sp</item>
         <item name="lineHeight">24dp</item>
     </style>
 
     <style name="text_12dp">
-        <item name="android:textSize">12dp</item>
+        <item name="android:textSize">12sp</item>
         <item name="lineHeight">16dp</item>
     </style>
 
     <style name="bold_text.12dp">
-        <item name="android:textSize">12dp</item>
+        <item name="android:textSize">12sp</item>
         <item name="lineHeight">16dp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="text_10dp">
-        <item name="android:textSize">10dp</item>
+        <item name="android:textSize">10sp</item>
         <item name="lineHeight">16dp</item>
     </style>
 
-    <style name="buttonText" parent="android:Widget.Material.Button">
-        <item name="android:textSize">16dp</item>
-        <item name="lineHeight">24dp</item>
-    </style>
     <style name="bold_text.8dp">
-        <item name="android:textSize">12dp</item>
+        <item name="android:textSize">12sp</item>
         <item name="lineHeight">16dp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="bold_text.6dp">
-        <item name="android:textSize">6dp</item>
+        <item name="android:textSize">6sp</item>
         <item name="lineHeight">16dp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="TabStyle" parent="Widget.MaterialComponents.TabLayout">
         <item name="android:background">@drawable/selector_tab</item>
     </style>
 
+    <style name="buttonText" parent="android:Widget.Material.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24dp</item>
+    </style>
+
+    <style name="tabStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">16dp</item>
+    </style>
+    <style name="tabTextStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">16dp</item>
+    </style>
 
 </resources>
