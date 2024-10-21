@@ -10,14 +10,6 @@
         android:layout_height="match_parent"
         tools:context=".ui.view.home.MainActivity">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/activity_main_tb"
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.fragment.app.FragmentContainerView
             android:background="@color/white"
@@ -29,7 +21,7 @@
             app:layout_constraintBottom_toTopOf="@id/activity_main_bnv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/activity_main_tb"
+            app:layout_constraintTop_toTopOf="parent"
             app:navGraph="@navigation/nav_main_graph" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
