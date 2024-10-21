@@ -11,7 +11,7 @@
 
         <TextView
             android:id="@+id/hot_news_confirm_fragment_hot_title_tv"
-            style="@style/title"
+            style="@style/bold_text.20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -23,7 +23,7 @@
 
         <TextView
             android:id="@+id/hot_news_confirm_fragment_title_tv"
-            style="@style/title"
+            style="@style/bold_text.20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
@@ -33,7 +33,7 @@
 
         <TextView
             android:id="@+id/hot_news_confirm_fragment_confirm_title_tv"
-            style="@style/title"
+            style="@style/bold_text.20dp"
             android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
 
         <TextView
             android:id="@+id/fragment_like_desc_tv"
-            style="@style/description"
+            style="@style/text_10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -63,7 +63,7 @@
 
             <TextView
                 android:id="@+id/checkBox"
-                style="@style/subtitle"
+                style="@style/bold_text.16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="핫토픽 위젯"
@@ -72,7 +72,7 @@
 
             <TextView
                 android:id="@+id/textView"
-                style="@style/description"
+                style="@style/text_10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -90,7 +90,7 @@
                 app:layout_constraintEnd_toEndOf="parent"/>
             <TextView
                 android:id="@+id/checkBox2"
-                style="@style/subtitle"
+                style="@style/bold_text.16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -100,7 +100,7 @@
 
             <TextView
                 android:id="@+id/textView2"
-                style="@style/description"
+                style="@style/text_10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -118,7 +118,7 @@
 
             <TextView
                 android:id="@+id/checkBox3"
-                style="@style/subtitle"
+                style="@style/bold_text.16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -128,7 +128,7 @@
 
             <TextView
                 android:id="@+id/textView3"
-                style="@style/description"
+                style="@style/text_10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
