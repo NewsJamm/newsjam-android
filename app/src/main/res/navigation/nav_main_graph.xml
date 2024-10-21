@@ -8,20 +8,45 @@
         android:id="@+id/hotTopicFragment"
         android:name="com.example.newsjam_android.ui.view.hottopic.HotTopicFragment"
         android:label="fragment_hot_topic"
-        tools:layout="@layout/fragment_hot_topic" />
+        tools:layout="@layout/fragment_hot_topic" >
+        <action
+            android:id="@+id/action_hotTopicFragment_to_newsDescriptionFragment"
+            app:destination="@id/newsDescriptionFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.example.newsjam_android.ui.view.news.NewsFragment"
         android:label="fragment_news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_newsDescriptionFragment"
+            app:destination="@id/newsDescriptionFragment" />
+    </fragment>
     <fragment
         android:id="@+id/myPageFragment"
         android:name="com.example.newsjam_android.ui.view.mypage.MyPageFragment"
         android:label="fragment_my_page"
-        tools:layout="@layout/fragment_my_page" />
+        tools:layout="@layout/fragment_my_page" >
+        <action
+            android:id="@+id/action_myPageFragment_to_newsDescriptionFragment"
+            app:destination="@id/newsDescriptionFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.newsjam_android.ui.view.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_newsDescriptionFragment"
+            app:destination="@id/newsDescriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDescriptionFragment"
+        android:name="com.example.newsjam_android.ui.view.news.NewsDescriptionFragment"
+        android:label="fragment_news_description"
+        tools:layout="@layout/fragment_news_description" >
+        <action
+            android:id="@+id/action_newsDescriptionFragment_self"
+            app:destination="@id/newsDescriptionFragment" />
+    </fragment>
 </navigation>
