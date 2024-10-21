@@ -17,15 +17,13 @@ class GlobalApplication : Application() {
         instance = this
 
     }
-
-
     companion object {
         lateinit var instance: GlobalApplication
             private set
 
         // 이미지를 맞추어 로드
-        fun loadImage(imageView: ImageView, source: Any) {
-            Glide.with(instance)
+        fun loadImage(context : Context, imageView: ImageView, source: Any) {
+            Glide.with(context)
                 .load(source)
                 .into(imageView)
         }
@@ -41,8 +39,8 @@ class GlobalApplication : Application() {
 
 
         // 이미지를 맞게 조정하여 로드
-        fun loadCropImage(imageView: ImageView, source: Any) {
-            Glide.with(instance)
+        fun loadCropImage(context : Context, imageView: ImageView, source: Any) {
+            Glide.with(context)
                 .load(source)
                 .centerCrop()
                 .into(imageView)
