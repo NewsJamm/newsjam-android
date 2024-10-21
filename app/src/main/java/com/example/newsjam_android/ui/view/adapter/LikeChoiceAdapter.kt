@@ -32,6 +32,4 @@ class LikeChoiceAdapter : BaseAdapter<TagData, ItemLikeChoiceTagBinding>(
             }
         }
     }
-
-
 }
