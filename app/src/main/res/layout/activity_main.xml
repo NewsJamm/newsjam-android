@@ -5,12 +5,14 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/main"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.view.home.MainActivity">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/activity_main_tb"
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -18,6 +20,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.fragment.app.FragmentContainerView
+            android:background="@color/white"
             android:id="@+id/activity_main_fcv"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
@@ -35,7 +38,7 @@
             android:layout_height="70dp"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp"
-
+            android:background="@color/white"
             app:itemActiveIndicatorStyle="@android:color/transparent"
             app:itemBackground="@android:color/transparent"
             app:itemIconTint="@color/selector_bottom_nav"
