@@ -5,4 +5,5 @@ data class NewsItem (
     val creator : String,
     val title : String,
     val arriveTime : String,
+    val views : Int
 )
