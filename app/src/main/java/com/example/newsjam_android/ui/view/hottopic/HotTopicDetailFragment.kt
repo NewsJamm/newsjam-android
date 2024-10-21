@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.anychart.AnyChart
 import com.anychart.chart.common.dataentry.CategoryValueDataEntry
 import com.anychart.chart.common.dataentry.DataEntry
@@ -21,8 +22,9 @@ import com.example.newsjam_android.databinding.FragmentHotTopicDetailBinding
 import com.example.newsjam_android.ui.base.BaseFragment
 import com.example.newsjam_android.ui.view.adapter.News1Adapter
 import com.example.newsjam_android.ui.view.adapter.News2Adapter
+import com.example.newsjam_android.ui.view.listener.AdapterItemClickedListener
 
-class HotTopicDetailFragment : BaseFragment<FragmentHotTopicDetailBinding>(R.layout.fragment_hot_topic_detail) {
+class HotTopicDetailFragment : BaseFragment<FragmentHotTopicDetailBinding>(R.layout.fragment_hot_topic_detail) , AdapterItemClickedListener{
     lateinit var tagCloud: TagCloud
     lateinit var news1Adapter: News1Adapter
     lateinit var news2Adapter: News2Adapter
@@ -31,7 +33,7 @@ class HotTopicDetailFragment : BaseFragment<FragmentHotTopicDetailBinding>(R.lay
         initAdapter()
     }
     private fun initAdapter() {
-        news1Adapter = News1Adapter()
+        news1Adapter = News1Adapter(this)
         news2Adapter = News2Adapter()
 
         val newsItem = NewsItem(
@@ -89,6 +91,10 @@ class HotTopicDetailFragment : BaseFragment<FragmentHotTopicDetailBinding>(R.lay
             })
         }
         binding.fragmentHotTopicDetailAcv.setChart(tagCloud);
+    }
+
+    override fun onClick(item: Any) {
+        findNavController().navigate(R.id.action_hotTopicFragment_to_newsDescriptionFragment)
     }
 
 
