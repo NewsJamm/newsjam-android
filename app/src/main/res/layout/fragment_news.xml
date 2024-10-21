@@ -1,16 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.view.news.NewsFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/fragment_news_tb"
+            style="@style/TabStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabBackground="@drawable/selector_tab"
+            app:tabGravity="start"
+            app:tabIndicator="@null"
+            app:tabTextAppearance="@style/tabTextStyle"
+            app:tabIndicatorColor="@android:color/transparent"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="scrollable"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/tab_unselected" />
 
-
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/fragment_news_vp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/shape_fill_white_square_rounded_32dp"
+            android:outlineProvider="background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/fragment_news_tb"
+            app:layout_constraintStart_toStartOf="@id/fragment_news_tb"
+            app:layout_constraintTop_toBottomOf="@id/fragment_news_tb" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>
