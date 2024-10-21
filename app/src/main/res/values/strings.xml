@@ -7,4 +7,6 @@
     <string name="hot_topic">핫토픽</string>
     <string name="news">뉴스</string>
     <string name="search">검색</string>
+    <string name="news_title">뉴스제목</string>
+    <string name="todo">TODO</string>
 </resources>
