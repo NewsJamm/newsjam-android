@@ -3,7 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main_red">#F2785A</color>
+    <color name="add_button">#F7F7F7</color>
+    <color name="divider_color">#F3F3F3</color>
     <color name="tag_gray">#F4F4F4</color>
     <color name="desc_gray">#333333</color>
     <color name="item_background_color">#C3C3C4</color>
+    <color name="tab_unselected">#656565</color>
 </resources>
