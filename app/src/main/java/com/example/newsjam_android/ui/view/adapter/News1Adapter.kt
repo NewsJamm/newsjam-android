@@ -6,8 +6,11 @@ import com.example.newsjam_android.databinding.ItemNewsBinding
 import com.example.newsjam_android.domain.extention.GlobalApplication
 import com.example.newsjam_android.ui.base.BaseAdapter
 import com.example.newsjam_android.ui.base.BaseDiffCallback
+import com.example.newsjam_android.ui.view.listener.AdapterItemClickedListener
 
-class News1Adapter : BaseAdapter<NewsItem, ItemNewsBinding>(
+class News1Adapter(
+    private val adapterItemClickedListener: AdapterItemClickedListener
+) : BaseAdapter<NewsItem, ItemNewsBinding>(
     BaseDiffCallback(
         itemsTheSame = { oldItem, newItem -> oldItem == newItem },
         contentsTheSame = { oldItem, newItem -> oldItem == newItem }
@@ -25,6 +28,9 @@ class News1Adapter : BaseAdapter<NewsItem, ItemNewsBinding>(
                 item.profile,
                 8
             )
+        }
+        binding.root.setOnClickListener{
+            adapterItemClickedListener.onClick(item)
         }
     }
 }
