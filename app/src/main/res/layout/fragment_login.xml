@@ -11,7 +11,7 @@
 
         <TextView
             android:id="@+id/activity_login_title_tv"
-            style="@style/title"
+            style="@style/bold_text.20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -22,7 +22,7 @@
 
         <TextView
             android:id="@+id/activity_login_des_tv"
-            style="@style/sub_subTitle"
+            style="@style/bold_text.12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="42dp"

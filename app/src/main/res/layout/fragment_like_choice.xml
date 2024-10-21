@@ -10,7 +10,7 @@
 
 
         <TextView
-            style="@style/title"
+            style="@style/bold_text.20dp"
             android:id="@+id/fragment_like_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            style="@style/description"
+            style="@style/text_10dp"
             android:id="@+id/fragment_like_desc_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
