@@ -1,15 +1,17 @@
 package com.example.newsjam_android.ui.view.news
 
+import androidx.navigation.fragment.findNavController
 import com.example.newsjam_android.R
 import com.example.newsjam_android.data.model.NewsItem
 import com.example.newsjam_android.databinding.FragmentNewsCategoryBinding
 import com.example.newsjam_android.domain.enums.OrderListType
 import com.example.newsjam_android.ui.base.BaseFragment
 import com.example.newsjam_android.ui.view.adapter.News1Adapter
+import com.example.newsjam_android.ui.view.listener.AdapterItemClickedListener
 import com.google.android.material.tabs.TabLayout
 
 class NewsCategoryFragment :
-    BaseFragment<FragmentNewsCategoryBinding>(R.layout.fragment_news_category) {
+    BaseFragment<FragmentNewsCategoryBinding>(R.layout.fragment_news_category), AdapterItemClickedListener {
     private lateinit var categoryAdapter: News1Adapter
     override fun setLayout() {
         initRecyclerView()
@@ -39,7 +41,7 @@ class NewsCategoryFragment :
     )
     private val list1 = mutableListOf(newsItem, newsItem2, newsItem3, newsItem2, newsItem2)
     private fun initRecyclerView() {
-        categoryAdapter = News1Adapter()
+        categoryAdapter = News1Adapter(this)
         binding.fragmentNewsCategoryRv.adapter = categoryAdapter
         categoryAdapter.submitList(list1)
     }
@@ -82,5 +84,9 @@ class NewsCategoryFragment :
 
             })
         }
+    }
+
+    override fun onClick(item: Any) {
+        findNavController().navigate(R.id.action_newsFragment_to_newsDescriptionFragment)
     }
 }
