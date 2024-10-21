@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.newsjam_android"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -42,6 +42,7 @@ android {
 }
 
 dependencies {
+
     implementation (libs.google.flexbox)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -54,4 +55,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("com.github.jolenechong:androidWordCloud:1.0.0") {
+        exclude(group="com.sun.xml.bind", module="jaxb-core")
+        exclude(group="com.sun.xml.bind", module="jaxb-impl")
+    }
+    implementation ("com.github.bumptech.glide:glide:4.9.0") {
+        exclude(group="com.android.support")
+    }
+    implementation (libs.support.fragment)
+    implementation ("com.github.AnyChart:AnyChart-Android:1.1.2")
+
 }

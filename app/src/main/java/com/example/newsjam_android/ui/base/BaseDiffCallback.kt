@@ -9,9 +9,7 @@ class BaseDiffCallback<T : Any>(
     override fun areItemsTheSame(oldItem: T, newItem: T): Boolean {
         return itemsTheSame(oldItem, newItem)
     }
-
     override fun areContentsTheSame(oldItem: T, newItem: T): Boolean {
         return contentsTheSame(oldItem, newItem)
     }
-
 }
