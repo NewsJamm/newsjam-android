@@ -23,6 +23,7 @@
             app:tabBackground="@drawable/selector_tab"
             app:tabGravity="start"
             app:tabIndicator="@null"
+            app:tabSelectedTextAppearance="@style/tabTextStyle"
             app:tabIndicatorColor="@android:color/transparent"
             app:tabIndicatorHeight="0dp"
             app:tabMode="scrollable"
@@ -32,8 +33,6 @@
 
         <androidx.viewpager2.widget.ViewPager2
             android:outlineProvider="background"
-            android:clipToOutline="true"
-            android:elevation="4dp"
             android:id="@+id/fragment_hot_topic_vp"
             android:layout_width="0dp"
             android:background="@drawable/shape_fill_white_square_rounded_32dp"
