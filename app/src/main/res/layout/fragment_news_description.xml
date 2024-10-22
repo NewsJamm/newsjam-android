@@ -4,21 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.view.news.NewsDescriptionFragment">
 
+
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/fragment_news_description_ns"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_news_description_cl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:layout_margin="16dp"
                 android:id="@+id/fragment_news_description_title_tv"
                 style="@style/bold_text.20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="16dp"
                 android:text="@string/news_title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -64,11 +68,11 @@
                 app:layout_constraintTop_toBottomOf="@id/fragment_news_scrap_iv" />
 
             <ImageView
-                android:layout_marginEnd="16dp"
                 android:id="@+id/news_text_view_iv"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:src="@color/empty_screen__color"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/fragment_news_text_title_tv"
@@ -79,8 +83,8 @@
                 style="@style/text8dp"
                 android:layout_width="match_parent"
                 android:layout_height="16dp"
-                android:text="캡션"
                 android:gravity="center"
+                android:text="캡션"
                 android:textAlignment="center"
                 android:textColor="@color/caption_text_color"
                 app:layout_constraintTop_toBottomOf="@id/news_text_view_iv" />
@@ -98,26 +102,16 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/fragment_news_description_rv"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:spanCount="2"
+                android:layout_marginTop="8dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fragment_news_linked_news_tv"
+                app:spanCount="2"
                 tools:listitem="@layout/item_news4" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_margin="16dp"
-                app:shapeAppearanceOverlay="@drawable/floating"
-                android:src="@drawable/floating"
-                android:contentDescription= "@string/todo" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </layout>

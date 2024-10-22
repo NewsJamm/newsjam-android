@@ -1,31 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/bottom_sheet_layout"
-    android:layout_width="match_parent"
-    android:layout_height="300dp"
-    android:background="@drawable/background_bottom_sheet"
-    android:clickable="true"
-    android:focusable="true"
-    android:orientation="vertical"
-    android:padding="10dp"
-    app:behavior_hideable="true"
-    app:behavior_peekHeight="296dp"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/layout_chat_bottom_sheet_up_iv"
-        android:layout_width="80dp"
-        android:layout_height="4dp"
-        android:layout_gravity="center"
-        android:src="@drawable/shape_fill_white_square_rounded_2dp" />
+    <data>
 
-    <androidx.recyclerview.widget.RecyclerView
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_sheet_layout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_chat_bottom_sheet_up_iv" />
+        android:layout_height="match_parent"
+        android:background="@drawable/background_bottom_sheet"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="50dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <ImageView
+            android:id="@+id/layout_chat_bottom_sheet_up_iv"
+            android:layout_width="80dp"
+            android:layout_height="4dp"
+            android:src="@drawable/shape_fill_white_square_rounded_2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/layout_chat_bottom_sheet_send_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_chat_bottom_sheet_up_iv" />
+
+        <EditText
+            android:id="@+id/layout_chat_bottom_sheet_send_et"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="@drawable/shape_fill_main_white_square_rounded_16dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+            app:layout_constraintStart_toStartOf="@+id/recyclerView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/layout_chat_bottom_sheet_send_bt"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/ic_message_send"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_chat_bottom_sheet_send_et" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
