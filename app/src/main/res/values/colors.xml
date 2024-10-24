@@ -15,4 +15,6 @@
     <color name="empty_screen__color">#D9D9D9</color>
     <color name="chatting_room_back_ground">#CDDCF0</color>
     <color name="chat_app_bubble_color">#FFF1EA</color>
+    <color name="edit_text_color">#CFCFCF</color>
+    <color name="toggle_off_color">#D5D3D3</color>
 </resources>
