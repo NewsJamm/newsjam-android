@@ -30,6 +30,12 @@
         <action
             android:id="@+id/action_myPageFragment_to_newsDescriptionFragment"
             app:destination="@id/newsDescriptionFragment" />
+        <action
+            android:id="@+id/action_myPageFragment_to_likeChoiceFragment2"
+            app:destination="@id/likeChoiceFragment2" />
+        <action
+            android:id="@+id/action_myPageFragment_to_hotNewsConfirmFragment2"
+            app:destination="@id/hotNewsConfirmFragment2" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -49,4 +55,14 @@
             android:id="@+id/action_newsDescriptionFragment_self"
             app:destination="@id/newsDescriptionFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/likeChoiceFragment2"
+        android:name="com.example.newsjam_android.ui.view.account.LikeChoiceFragment"
+        android:label="LikeChoiceFragment"
+        tools:layout="@layout/fragment_like_choice"/>
+    <fragment
+        android:id="@+id/hotNewsConfirmFragment2"
+        android:name="com.example.newsjam_android.ui.view.account.HotNewsConfirmFragment"
+        android:label="HotNewsConfirmFragment"
+        tools:layout="@layout/hot_news_confirm_fragment"/>
 </navigation>
