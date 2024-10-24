@@ -1,60 +1,92 @@
 package com.example.newsjam_android.ui.view.mypage
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.anychart.AnyChart
+import com.anychart.chart.common.dataentry.CategoryValueDataEntry
+import com.anychart.chart.common.dataentry.DataEntry
+import com.anychart.chart.common.listener.Event
+import com.anychart.chart.common.listener.ListenersInterface
+import com.anychart.charts.TagCloud
+import com.anychart.scales.OrdinalColor
 import com.example.newsjam_android.R
+import com.example.newsjam_android.databinding.FragmentMyPageBinding
+import com.example.newsjam_android.ui.base.BaseFragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class MyPageFragment : BaseFragment<FragmentMyPageBinding>(R.layout.fragment_my_page) {
+    lateinit var tagCloud: TagCloud
+    override fun setLayout() {
+        initCloud()
+        bindingTextViewClickedListener()
+    }
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MyPageFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class MyPageFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private fun bindingTextViewClickedListener() {
+        with(binding) {
+            fragmentMyPageScrapNewsTv.setOnClickListener {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            }
+            fragmentMyPageRecentNewsTv.setOnClickListener {
+
+            }
+            fragmentMyPageSettingLikeTv.setOnClickListener {
+                findNavController().navigateSafe(
+                    R.id.action_myPageFragment_to_likeChoiceFragment2,
+                    args = Bundle().apply { putString("page", "my_page") }
+                )
+            }
+            fragmentMyPageSettingFunctionTv.setOnClickListener {
+                findNavController().navigateSafe(
+                    R.id.action_myPageFragment_to_hotNewsConfirmFragment2,
+                    args = Bundle().apply { putString("page", "my_page") }
+                )
+            }
+            fragmentMyPageLogoutTv.setOnClickListener {
+
+            }
+            fragmentMyPageExitTv.setOnClickListener {
+
+            }
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_page, container, false)
+    private fun navigationWithNextPage(action: Int) {
+        findNavController().navigate(action)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MyPageFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MyPageFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
+    private fun initCloud() {
+        tagCloud = AnyChart.tagCloud()
+        //데이터 추가
+        val data: MutableList<DataEntry> = ArrayList()
+        data.add(CategoryValueDataEntry("김준하", "백엔드", 1383220000))
+        data.add(CategoryValueDataEntry("김진하", "백엔드", 1316000000))
+        data.add(CategoryValueDataEntry("박지원", "안드로이드", 324982000))
+        data.add(CategoryValueDataEntry("이은규", "PM", 324982000))
+
+        val ordinalColor = OrdinalColor.instantiate().apply {
+            colors(arrayOf("#7F21F7", "#AD71FA", "#B47EFA", "#D2B0FF"))
+        }
+        with(tagCloud) {
+            colorScale(ordinalColor)
+            angles(arrayOf(-90.0, 0.0, 90.0))
+            colorRange().enabled(true)
+            colorRange().colorLineSize(15.0)
+            data(data);
+            setOnClickListener(object :
+                ListenersInterface.OnClickListener(arrayOf("x", "category")) {
+                override fun onClick(event: Event) {
+                    val clickedTag = event.data["x"]  // 클릭한 단어 (x)
+                    val category = event.data["category"]  // 카테고리 (category)
+                    android.widget.Toast.makeText(
+                        requireContext(),
+                        "$clickedTag",
+                        android.widget.Toast.LENGTH_SHORT
+                    ).show()
+                    // 원하는 동작 수행
+                    android.util.Log.d("로그", "$clickedTag, Category: $category")
                 }
-            }
+            })
+        }
+        binding.fragmentMyPageMyWordCloudAcv.setChart(tagCloud);
     }
 }
