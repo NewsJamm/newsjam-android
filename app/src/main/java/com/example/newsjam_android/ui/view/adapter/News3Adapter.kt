@@ -3,10 +3,9 @@ package com.example.newsjam_android.ui.view.adapter
 import com.example.newsjam_android.R
 import com.example.newsjam_android.data.model.NewsItem3
 import com.example.newsjam_android.databinding.ItemNews3Binding
-import com.example.newsjam_android.domain.extention.GlobalApplication
+import com.example.newsjam_android.GlobalApplication
 import com.example.newsjam_android.ui.base.BaseAdapter
 import com.example.newsjam_android.ui.base.BaseDiffCallback
-import com.example.newsjam_android.ui.view.home.MainActivity
 
 class News3Adapter : BaseAdapter<NewsItem3, ItemNews3Binding>(
     BaseDiffCallback(

@@ -3,7 +3,7 @@ package com.example.newsjam_android.ui.view.adapter
 import com.example.newsjam_android.R
 import com.example.newsjam_android.data.model.NewsItem
 import com.example.newsjam_android.databinding.ItemNewsBinding
-import com.example.newsjam_android.domain.extention.GlobalApplication
+import com.example.newsjam_android.GlobalApplication
 import com.example.newsjam_android.ui.base.BaseAdapter
 import com.example.newsjam_android.ui.base.BaseDiffCallback
 import com.example.newsjam_android.ui.view.listener.AdapterItemClickedListener

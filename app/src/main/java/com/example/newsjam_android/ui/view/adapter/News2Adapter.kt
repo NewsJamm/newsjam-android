@@ -1,19 +1,13 @@
 package com.example.newsjam_android.ui.view.adapter
 
-import android.graphics.Color
-import androidx.recyclerview.widget.RecyclerView
 import com.example.newsjam_android.R
 import com.example.newsjam_android.data.model.NewsItem
 import com.example.newsjam_android.data.model.NewsItem2
 import com.example.newsjam_android.data.model.NewsItem3
-import com.example.newsjam_android.data.model.TagData
-import com.example.newsjam_android.databinding.ItemLikeChoiceTagBinding
 import com.example.newsjam_android.databinding.ItemNews2Binding
-import com.example.newsjam_android.databinding.ItemNewsBinding
-import com.example.newsjam_android.domain.extention.GlobalApplication
+import com.example.newsjam_android.GlobalApplication
 import com.example.newsjam_android.ui.base.BaseAdapter
 import com.example.newsjam_android.ui.base.BaseDiffCallback
-import com.example.newsjam_android.ui.view.home.MainActivity
 
 class News2Adapter : BaseAdapter<NewsItem2, ItemNews2Binding>(
     BaseDiffCallback(
