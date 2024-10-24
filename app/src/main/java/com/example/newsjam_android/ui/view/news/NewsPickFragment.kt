@@ -5,7 +5,7 @@ import com.example.newsjam_android.data.model.NewsItem
 import com.example.newsjam_android.data.model.NewsItem2
 import com.example.newsjam_android.databinding.FragmentNewsCategoryBinding
 import com.example.newsjam_android.databinding.FragmentNewsPickBinding
-import com.example.newsjam_android.domain.enums.OrderListType
+import com.example.newsjam_android.data.enums.OrderListType
 import com.example.newsjam_android.ui.base.BaseFragment
 import com.example.newsjam_android.ui.view.adapter.News1Adapter
 import com.example.newsjam_android.ui.view.adapter.News2Adapter
