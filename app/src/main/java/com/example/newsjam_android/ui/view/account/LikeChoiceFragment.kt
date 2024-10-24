@@ -20,8 +20,18 @@ class LikeChoiceFragment : BaseFragment<FragmentLikeChoiceBinding>(R.layout.frag
     }
 
     private fun setOnClickView() {
+        val page = arguments?.getString("page")
+        if(!page.isNullOrEmpty()){
+            binding.appCompatButton.text = "저장"
+        }
+        binding.appCompatButton.tag = page
         binding.appCompatButton.setOnClickListener {
-            findNavController().navigate(R.id.action_likeChoiceFragment_to_hotNewsConfirmFragment)
+            if (it.tag == "my_page") {
+                //저장로직 추가필요
+                findNavController().popBackStack()
+            } else {
+                findNavController().navigate(R.id.action_likeChoiceFragment_to_hotNewsConfirmFragment)
+            }
         }
     }
 
