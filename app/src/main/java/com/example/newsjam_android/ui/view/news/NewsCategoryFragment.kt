@@ -4,7 +4,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.newsjam_android.R
 import com.example.newsjam_android.data.model.NewsItem
 import com.example.newsjam_android.databinding.FragmentNewsCategoryBinding
-import com.example.newsjam_android.domain.enums.OrderListType
+import com.example.newsjam_android.data.enums.OrderListType
 import com.example.newsjam_android.ui.base.BaseFragment
 import com.example.newsjam_android.ui.view.adapter.News1Adapter
 import com.example.newsjam_android.ui.view.listener.AdapterItemClickedListener

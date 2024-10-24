@@ -1,17 +1,13 @@
 package com.example.newsjam_android.ui.view.news
 
-import android.util.Log
-import android.view.View
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import com.example.newsjam_android.R
 import com.example.newsjam_android.data.model.NewsItem
 import com.example.newsjam_android.databinding.FragmentNewsDescriptionBinding
-import com.example.newsjam_android.domain.extention.GlobalApplication
+import com.example.newsjam_android.GlobalApplication
 import com.example.newsjam_android.ui.base.BaseFragment
 import com.example.newsjam_android.ui.view.adapter.News4Adapter
 import com.example.newsjam_android.ui.view.listener.AdapterItemClickedListener
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class NewsDescriptionFragment :
     BaseFragment<FragmentNewsDescriptionBinding>(R.layout.fragment_news_description),
