@@ -1,14 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.view.mypage.MyPageFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/my_page" />
+        tools:context=".ui.view.mypage.MyPageFragment">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/fragment_my_page_title_tv"
+            style="@style/bold_text.20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="박지원님 안녕하세요"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_my_page_my_news_tv"
+            style="@style/bold_text.14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="나의 뉴스 성향"
+            app:layout_constraintStart_toStartOf="@id/fragment_my_page_title_tv"
+            app:layout_constraintTop_toBottomOf="@id/fragment_my_page_title_tv" />
+
+        <FrameLayout
+            android:id="@+id/fragment_my_page_my_word_cloud_fl"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_my_page_my_news_tv">
+
+            <com.anychart.AnyChartView
+                android:layout_gravity="center"
+                android:id="@+id/fragment_my_page_my_word_cloud_acv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@android:color/transparent"
+            android:id="@+id/fragment_my_page_scrap_news_tv"
+            style="@style/text14dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical"
+            android:text="@string/scrap_news"
+            app:drawableRightCompat="@drawable/ic_move"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_my_page_my_word_cloud_fl" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@android:color/transparent"
+            android:id="@+id/fragment_my_page_recent_news_tv"
+            style="@style/text14dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical"
+            android:text="@string/recent_news"
+            app:drawableRightCompat="@drawable/ic_move"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_my_page_scrap_news_tv" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@android:color/transparent"
+            android:id="@+id/fragment_my_page_setting_like_tv"
+            style="@style/text14dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical"
+            android:text="@string/setting_like"
+            app:drawableRightCompat="@drawable/ic_move"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_my_page_recent_news_tv" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@android:color/transparent"
+            android:id="@+id/fragment_my_page_setting_function_tv"
+            style="@style/text14dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical"
+            android:text="@string/setting_function"
+            app:drawableRightCompat="@drawable/ic_move"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_my_page_setting_like_tv" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@android:color/transparent"
+            android:id="@+id/fragment_my_page_logout_tv"
+            style="@style/text_12dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical"
+            android:text="@string/logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_my_page_setting_function_tv" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@android:color/transparent"
+            android:id="@+id/fragment_my_page_exit_tv"
+            style="@style/text_12dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical"
+            android:text="@string/exit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_my_page_logout_tv" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:dividerColor="@color/tag_gray"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_my_page_logout_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_my_page_setting_function_tv" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:dividerColor="@color/tag_gray"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_my_page_setting_like_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_my_page_recent_news_tv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
