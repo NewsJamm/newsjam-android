@@ -1,28 +1,61 @@
-package com.example.newsjam_android.domain.extention
+package com.example.newsjam_android
 
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import com.example.newsjam_android.data.di.AppCoroutineScope
+import com.example.newsjam_android.domain.extention.TokenManager
+import com.google.firebase.messaging.FirebaseMessaging
+import dagger.hilt.android.HiltAndroidApp
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@HiltAndroidApp
 class GlobalApplication : Application() {
+
+    @Inject
+    lateinit var tokenManager: TokenManager
+
+    @Inject
+    @AppCoroutineScope
+    lateinit var scope: CoroutineScope
 
     override fun onCreate() {
         super.onCreate()
         instance = this
-
+        takeFirebaseToken()
     }
+
+    private fun takeFirebaseToken() {
+        FirebaseMessaging.getInstance().token
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val token = task.result
+                    scope.launch {
+                        tokenManager.saveFirebaseToken(token) // Firebase 토큰 저장
+                    }
+                    Log.d("토큰", "FCM 토큰: $token")
+                } else {
+                    Log.e("토큰", "FCM 토큰 가져오기 실패", task.exception)
+                }
+            }
+    }
+
+
     companion object {
         lateinit var instance: GlobalApplication
             private set
 
         // 이미지를 맞추어 로드
-        fun loadImage(context : Context, imageView: ImageView, source: Any) {
+        fun loadImage(context: Context, imageView: ImageView, source: Any) {
             Glide.with(context)
                 .load(source)
                 .into(imageView)
@@ -39,7 +72,7 @@ class GlobalApplication : Application() {
 
 
         // 이미지를 맞게 조정하여 로드
-        fun loadCropImage(context : Context, imageView: ImageView, source: Any) {
+        fun loadCropImage(context: Context, imageView: ImageView, source: Any) {
             Glide.with(context)
                 .load(source)
                 .centerCrop()
