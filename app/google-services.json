@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "835080182718",
+    "project_id": "toast-bd850",
+    "storage_bucket": "toast-bd850.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835080182718:android:b798014b097a8b9c05f7ef",
+        "android_client_info": {
+          "package_name": "com.example.newsjam_android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOUE0ToVTy8ExPkr5PMepefnm9GV2pj1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
