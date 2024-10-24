@@ -36,9 +36,12 @@
     <style name="bold_text.12dp">
         <item name="android:textSize">12sp</item>
         <item name="lineHeight">16dp</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="text_12dp_he24">
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">24dp</item>
+    </style>
     <style name="text_10dp">
         <item name="android:textSize">10sp</item>
         <item name="lineHeight">16dp</item>
@@ -59,7 +62,9 @@
         <item name="lineHeight">16dp</item>
         <item name="android:textStyle">bold</item>
     </style>
-
+    <style name="SwitchStyle" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="thumbTint">@color/white</item>
+    </style>
     <style name="TabStyle" parent="Widget.MaterialComponents.TabLayout">
         <item name="android:background">@drawable/selector_tab</item>
     </style>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
+
     <style name="fab_3_rounded">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
     <style name="bold_text">
         <item name="android:textFontWeight">600</item>
     </style>
@@ -12,10 +14,12 @@
         <item name="android:textSize">20sp</item>
         <item name="lineHeight">24dp</item>
     </style>
+
     <style name="text20dp">
         <item name="android:textSize">20sp</item>
         <item name="android:textFontWeight">500</item>
     </style>
+
     <style name="bold_text.18dp">
         <item name="android:textSize">18sp</item>
         <item name="lineHeight">24dp</item>
@@ -31,15 +35,18 @@
         <item name="android:textSize">16sp</item>
         <item name="lineHeight">24dp</item>
     </style>
+
     <style name="bold_text.14dp">
         <item name="android:textSize">14sp</item>
         <item name="lineHeight">24dp</item>
     </style>
+
     <style name="text14dp">
         <item name="android:textSize">14sp</item>
         <item name="android:textFontWeight">500</item>
         <item name="lineHeight">14dp</item>
     </style>
+
     <style name="bold_text.12dp">
         <item name="android:textSize">12sp</item>
         <item name="lineHeight">16dp</item>
@@ -49,6 +56,12 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textFontWeight">300</item>
         <item name="lineHeight">16dp</item>
+    </style>
+
+    <style name="text_12dp_he24">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textFontWeight">300</item>
+        <item name="lineHeight">24dp</item>
     </style>
 
     <style name="text_10dp">
@@ -62,10 +75,12 @@
         <item name="android:textFontWeight">500</item>
         <item name="lineHeight">16dp</item>
     </style>
+
     <style name="text8dp">
         <item name="android:textSize">8sp</item>
         <item name="lineHeight">16dp</item>
     </style>
+
     <style name="bold_text.6dp">
         <item name="android:textSize">6sp</item>
         <item name="android:textFontWeight">500</item>
@@ -78,6 +93,10 @@
         <item name="android:textFontWeight">500</item>
     </style>
 
+    <style name="SwitchStyle" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="thumbTint">@color/white</item>
+        <item name="track">@drawable/selector_switch</item>
+    </style>
 
     <style name="TabStyle" parent="Widget.MaterialComponents.TabLayout">
         <item name="android:background">@drawable/selector_tab</item>
