@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="searchType"
+            type="com.example.newsjam_android.data.model.RankType.SearchResultType" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/item_search_publish_tv"
+            style="@style/text8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{searchType.publish}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_search_title_tv"
+            style="@style/bold_text.16dp.24he"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="2"
+            android:text="@{searchType.title}"
+            app:layout_constraintBottom_toTopOf="@id/item_search_arrive_time_tv"
+            app:layout_constraintEnd_toStartOf="@+id/item_search_profile_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_search_publish_tv" />
+
+        <TextView
+            android:id="@+id/item_search_arrive_time_tv"
+            style="@style/text8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@{searchType.arriveTime}"
+            app:layout_constraintBottom_toTopOf="@id/item_search_arrive_divider_dv"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/item_search_arrive_divider_dv"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:dividerColor="@color/divider_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/item_search_profile_iv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/shape_fill_gray_square_rounded_8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

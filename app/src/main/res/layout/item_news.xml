@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="newsItem"
+            type="com.example.newsjam_android.data.model.NewsItem" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/item_news_iv"
+            android:layout_width="match_parent"
+            android:layout_height="184dp"
+            android:background="@drawable/shape_fill_white_square_rounded_8dp"
+            android:backgroundTint="#CECECE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_news_Issuer_tv"
+            style="@style/bold_text.8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:height="16dp"
+            android:gravity="center"
+            android:text="@{newsItem.creator}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_news_iv" />
+
+        <TextView
+            android:id="@+id/item_news_title_tv"
+            style="@style/bold_text.16dp.24he"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:height="24dp"
+            android:gravity="center"
+            android:text="@{newsItem.title}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_news_Issuer_tv" />
+
+        <TextView
+            android:id="@+id/item_news_arrive_time_tv"
+            style="@style/bold_text.8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:height="16dp"
+            android:gravity="center"
+            android:text="@{newsItem.arriveTime}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_news_title_tv" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            app:dividerColor="@color/divider_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_news_arrive_time_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

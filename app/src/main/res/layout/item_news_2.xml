@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="newsItem2"
+            type="com.example.newsjam_android.data.model.NewsItem2" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:id="@+id/item_news_2_tag_title_tv"
+            style="@style/bold_text.16dp.24he"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`#`+newsItem2.tag}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/item_news_2_iv"
+            android:layout_width="match_parent"
+            android:layout_height="184dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_fill_white_square_rounded_8dp"
+            android:backgroundTint="#CECECE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_news_2_tag_title_tv" />
+
+        <TextView
+            android:id="@+id/item_news_2_Issuer_2_tv"
+            style="@style/bold_text.8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:height="16dp"
+            android:gravity="center"
+            android:text="@{newsItem2.newsItem.creator}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_news_2_iv" />
+
+        <TextView
+            android:id="@+id/item_news_2_title_tv"
+            style="@style/bold_text.16dp.24he"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:height="24dp"
+            android:text="@{newsItem2.newsItem.title}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_news_2_Issuer_2_tv" />
+
+        <TextView
+            android:id="@+id/item_news_2_arrive_time_tv"
+            style="@style/bold_text.8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:height="16dp"
+            android:gravity="center"
+            android:text="@{newsItem2.newsItem.arriveTime}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_news_2_title_tv" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/item_news_2_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_news_2_arrive_time_tv"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_news_3" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            app:dividerColor="@color/divider_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_news_2_rv"
+            app:layout_goneMarginTop="24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
