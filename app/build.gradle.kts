@@ -3,8 +3,9 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.gms.google-services")
-    id("com.google.dagger.hilt.android")
-    id("kotlin-kapt")
+//    id("com.google.dagger.hilt.android")
+//    id("kotlin-kapt")
+    id("com.example.hilt")
 
 }
 
@@ -73,10 +74,7 @@ dependencies {
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.messaging)
     implementation (libs.androidx.datastore.preferences)
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+//    implementation(libs.hilt.android)
+//    kapt(libs.hilt.android.compiler)
 
-}
-kapt {
-    correctErrorTypes = true
 }

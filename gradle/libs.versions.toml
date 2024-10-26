@@ -2,24 +2,31 @@
 agp = "8.3.0"
 datastorePreferences = "1.1.1"
 firebaseAnalyticsKtx = "22.1.2"
-firebaseBom = "33.5.0"
+firebaseBom = "33.5.1"
 googleFlexbox = "3.0.0"
-hiltAndroid = "2.50"
-kotlin = "1.9.0"
+hiltAndroid = "2.52"
+kotlin = "1.9.24"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
-espressoCore = "3.6.1"
+hilt = "2.52"
+hiltExt = "1.2.0"
 appcompat = "1.7.0"
 material = "1.12.0"
-activity = "1.8.0"
+activity = "1.9.3"
 constraintlayout = "2.1.4"
-navigationRuntimeKtx = "2.8.2"
+navigationRuntimeKtx = "2.8.3"
+ksp = "2.0.20-1.0.25"
+androidTools = "31.7.1"
+firebaseCrashlyticsPlugin = "3.0.2" # 적절한 버전으로 교체하세요.
+firebasePerfPlugin = "1.4.2" # 적절한 버전으로 교체하세요.
+androidDesugarJdkLibs = "2.1.2" # 적절한 버전으로 교체하세요.
 supportFragment = "28.0.0"
 viewpager2 = "1.1.0"
 googleServices = "4.4.2"
 firebaseMessaging = "24.0.3"
-
+jetbrainsKotlinJvm = "2.0.20"
+espressoCore = "3.4.0"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
@@ -30,8 +37,18 @@ androidx-viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref =
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version.ref = "firebaseAnalyticsKtx" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 google-flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "googleFlexbox" }
-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
+
+
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
+hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "hilt" }
+hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltExt" }
+hilt-ext-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "hiltExt" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+
+
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -43,8 +60,18 @@ androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navig
 support-fragment = { module = "com.android.support:support-fragment", version.ref = "supportFragment" }
 google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServices" }
 firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessaging" }
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
+firebase-crashlytics-gradlePlugin = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsPlugin" }
+firebase-performance-gradlePlugin = { group = "com.google.firebase", name = "perf-plugin", version.ref = "firebasePerfPlugin" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 

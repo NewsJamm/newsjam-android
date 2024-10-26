@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google {
             content {
@@ -9,6 +10,8 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+
+
     }
 }
 dependencyResolutionManagement {
@@ -23,4 +26,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "newsjam-android"
 include(":app")
- 
+include(":core")
+include(":feature")
