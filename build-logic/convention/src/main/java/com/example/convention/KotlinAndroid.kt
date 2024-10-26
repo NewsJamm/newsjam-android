@@ -24,7 +24,10 @@ internal fun Project.configureKotlinAndroid(
         defaultConfig {
             minSdk = 26
         }
-
+        // 뷰 바인딩 활성화
+        buildFeatures {
+            viewBinding = true
+        }
         compileOptions {
             // Up to Java 11 APIs are available through desugaring
             // https://developer.android.com/studio/write/java11-minimal-support-table

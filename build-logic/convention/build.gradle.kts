@@ -25,6 +25,7 @@ dependencies {
     compileOnly(libs.ksp.gradlePlugin)
     compileOnly(libs.firebase.crashlytics.gradlePlugin)
     compileOnly(libs.firebase.performance.gradlePlugin)
+
 }
 
 gradlePlugin {
@@ -32,6 +33,14 @@ gradlePlugin {
         register("android-hilt") {
             id = "com.example.hilt"
             implementationClass = "com.example.convention.HiltConventionPlugin"
+        }
+        register("androidApplication") {
+            id = "com.example.android.application"
+            implementationClass = "com.example.convention.AndroidApplicationConventionPlugin"
+        }
+        register("androidLibrary") {
+            id = "com.example.android.library"
+            implementationClass = "com.example.convention.AndroidLibraryConventionPlugin"
         }
     }
 }
