@@ -1,5 +1,6 @@
 package com.example.newsjam_android.ui.view.mypage
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import com.anychart.AnyChart
@@ -12,9 +13,14 @@ import com.anychart.scales.OrdinalColor
 import com.example.newsjam_android.R
 import com.example.newsjam_android.databinding.FragmentMyPageBinding
 import com.example.newsjam_android.ui.base.BaseFragment
+import com.example.newsjam_android.ui.view.account.LoginActivity
+import com.example.newsjam_android.ui.view.dialog.WithDrawDialog
+import com.example.newsjam_android.ui.view.listener.DialogConfirmListener
 
-class MyPageFragment : BaseFragment<FragmentMyPageBinding>(R.layout.fragment_my_page) {
+class MyPageFragment : BaseFragment<FragmentMyPageBinding>(R.layout.fragment_my_page),
+    DialogConfirmListener {
     lateinit var tagCloud: TagCloud
+
     override fun setLayout() {
         initCloud()
         bindingTextViewClickedListener()
@@ -23,10 +29,14 @@ class MyPageFragment : BaseFragment<FragmentMyPageBinding>(R.layout.fragment_my_
     private fun bindingTextViewClickedListener() {
         with(binding) {
             fragmentMyPageScrapNewsTv.setOnClickListener {
-
+                findNavController().navigate(
+                    R.id.action_myPageFragment_to_scrapFragment
+                )
             }
             fragmentMyPageRecentNewsTv.setOnClickListener {
-
+                findNavController().navigate(
+                    R.id.action_myPageFragment_to_recentFragment
+                )
             }
             fragmentMyPageSettingLikeTv.setOnClickListener {
                 findNavController().navigateSafe(
@@ -41,13 +51,16 @@ class MyPageFragment : BaseFragment<FragmentMyPageBinding>(R.layout.fragment_my_
                 )
             }
             fragmentMyPageLogoutTv.setOnClickListener {
-
+                outFrame()
             }
             fragmentMyPageExitTv.setOnClickListener {
-
+                val dialog = WithDrawDialog(this@MyPageFragment)
+                dialog.isCancelable = false
+                dialog.show(requireActivity().supportFragmentManager, "WithDrawDialog")
             }
         }
     }
+
 
     private fun navigationWithNextPage(action: Int) {
         findNavController().navigate(action)
@@ -89,4 +102,15 @@ class MyPageFragment : BaseFragment<FragmentMyPageBinding>(R.layout.fragment_my_
         }
         binding.fragmentMyPageMyWordCloudAcv.setChart(tagCloud);
     }
+
+    override fun onClick() {
+        outFrame()
+    }
+
+    private fun outFrame() {
+        startActivity(Intent(requireContext(), LoginActivity::class.java))
+        requireActivity().finish()
+    }
+
+
 }

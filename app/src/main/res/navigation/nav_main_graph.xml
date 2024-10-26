@@ -36,6 +36,12 @@
         <action
             android:id="@+id/action_myPageFragment_to_hotNewsConfirmFragment2"
             app:destination="@id/hotNewsConfirmFragment2" />
+        <action
+            android:id="@+id/action_myPageFragment_to_scrapFragment"
+            app:destination="@id/scrapFragment" />
+        <action
+            android:id="@+id/action_myPageFragment_to_recentFragment"
+            app:destination="@id/recentFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -65,4 +71,16 @@
         android:name="com.example.newsjam_android.ui.view.account.HotNewsConfirmFragment"
         android:label="HotNewsConfirmFragment"
         tools:layout="@layout/hot_news_confirm_fragment"/>
+    <fragment
+        android:id="@+id/scrapFragment"
+        android:name="com.example.newsjam_android.ui.view.mypage.ScrapFragment"
+        android:label="ScrapFragment"
+        tools:layout="@layout/fragment_scrap"
+        />
+    <fragment
+        android:id="@+id/recentFragment"
+        android:name="com.example.newsjam_android.ui.view.mypage.RecentFragment"
+        android:label="RecentFragment"
+        tools:layout="@layout/fragment_scrap"
+        />
 </navigation>

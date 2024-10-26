@@ -19,7 +19,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_sea
     private lateinit var globalLayoutListener: ViewTreeObserver.OnGlobalLayoutListener
     private lateinit var searchMultiAdapter: SearchHotTopicAdapter
     private lateinit var rankList : MutableList<RankType>
-    var resultList : MutableList<RankType> = mutableListOf(
+    private var resultList : MutableList<RankType> = mutableListOf(
         RankType.SearchResultType(
             publish = "스브스뉴스",
             title ="코인에 빠진 대통령, 엘살바도르의 운명은?",
