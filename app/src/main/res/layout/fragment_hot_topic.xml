@@ -23,13 +23,14 @@
             app:tabBackground="@drawable/selector_tab"
             app:tabGravity="start"
             app:tabIndicator="@null"
-            app:tabSelectedTextAppearance="@style/tabTextStyle"
             app:tabIndicatorColor="@android:color/transparent"
             app:tabIndicatorHeight="0dp"
             app:tabMode="scrollable"
+            app:tabTextAppearance="@style/tabTextStyle"
+            app:tabSelectedTextAppearance="@style/weight_16dp"
+            app:tabTextColor="@color/withdraw_cancel_bt_color"
             app:tabRippleColor="@android:color/transparent"
-            app:tabSelectedTextColor="@color/white"
-            app:tabTextColor="@color/tab_unselected" />
+            app:tabSelectedTextColor="@color/white" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:outlineProvider="background"

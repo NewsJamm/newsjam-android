@@ -1,13 +1,10 @@
 package com.example.newsjam_android.ui.view.mypage
 
 import com.example.newsjam_android.R
-import com.example.newsjam_android.data.model.RankType
-import com.example.newsjam_android.data.model.ScrapType
+import com.example.data.model.RankType
 import com.example.newsjam_android.databinding.FragmentRecentBinding
-import com.example.newsjam_android.databinding.FragmentScrapBinding
 import com.example.newsjam_android.ui.base.BaseFragment
 import com.example.newsjam_android.ui.view.adapter.RecentAdapter
-import com.example.newsjam_android.ui.view.adapter.ScrapAdapter
 import com.example.newsjam_android.ui.view.listener.AdapterItemClickedListener
 
 

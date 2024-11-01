@@ -3,23 +3,25 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.gms.google-services")
-    id("com.google.dagger.hilt.android")
-    id("kotlin-kapt")
-
+    id("com.example.hilt")
+    id("com.example.android.application")
 }
 
 android {
     namespace = "com.example.newsjam_android"
-    compileSdk = 34
-
+    packagingOptions {
+        exclude("META-INF/DEPENDENCIES")
+    }
     defaultConfig {
         applicationId = "com.example.newsjam_android"
-        minSdk = 26
-        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures{
+        dataBinding = true
     }
 
     buildTypes {
@@ -31,17 +33,9 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
+
     kotlinOptions {
         jvmTarget = "1.8"
-    }
-    // 뷰 바인딩 활성화
-    buildFeatures {
-        viewBinding = true
-        dataBinding = true
     }
 }
 
@@ -57,6 +51,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.viewpager2)
     implementation(libs.firebase.messaging)
+    implementation(libs.play.services.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -73,10 +68,9 @@ dependencies {
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.messaging)
     implementation (libs.androidx.datastore.preferences)
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+    implementation(project(":core:database")) // `database` 모듈을 `app` 모듈의 종속성으로 추가
+    implementation(project(":core:data")) // `data` 모듈을 `app` 모듈의 종속성으로 추가
+    implementation(project(":core:domain")) // `domain` 모듈을 `app` 모듈의 종속성으로 추가
 
-}
-kapt {
-    correctErrorTypes = true
+
 }

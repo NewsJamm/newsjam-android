@@ -33,7 +33,7 @@ class HotTopicFragment : BaseFragment<FragmentHotTopicBinding>(R.layout.fragment
         TabLayoutMediator(binding.fragmentHotTopicTb, binding.fragmentHotTopicVp) { tab, position ->
             tab.text = tabList[position]
         }.attach()
-        setTabItemMargin(binding.fragmentHotTopicTb, 8)
+        setTabItemMargin(binding.fragmentHotTopicTb, 16)
 
         binding.fragmentHotTopicTb.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {

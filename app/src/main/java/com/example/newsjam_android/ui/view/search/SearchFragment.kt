@@ -8,17 +8,27 @@ import android.view.ViewTreeObserver
 import android.widget.EditText
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.example.newsjam_android.R
-import com.example.newsjam_android.data.model.RankType
+import com.example.data.model.RankType
 import com.example.newsjam_android.databinding.FragmentSearchBinding
 import com.example.newsjam_android.ui.base.BaseFragment
 import com.example.newsjam_android.ui.view.adapter.SearchHotTopicAdapter
-
+import com.example.newsjam_android.ui.view.viewmodel.AccountViewModel
+import com.example.newsjam_android.ui.view.viewmodel.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+@AndroidEntryPoint
 class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_search) {
     private var isKeyboardVisible = false // 키보드 상태를 저장하기 위한 변수
     private lateinit var globalLayoutListener: ViewTreeObserver.OnGlobalLayoutListener
     private lateinit var searchMultiAdapter: SearchHotTopicAdapter
     private lateinit var rankList : MutableList<RankType>
+    private val mainViewModel: MainViewModel by viewModels()
     private var resultList : MutableList<RankType> = mutableListOf(
         RankType.SearchResultType(
             publish = "스브스뉴스",
@@ -47,6 +57,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_sea
         )
     )
     override fun setLayout() {
+        observeLifeCycle()
         observeKeyboardState()
         initRecyclerView()
         changeSearchResultAdapter()
@@ -60,15 +71,21 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_sea
 
     private fun changeRankRecyclerView(){
         showHotTopicTitle()
-        rankList = mutableListOf()
-        for (i in 1 .. 10){
-            rankList.add(RankType.HopTopicType(
-                "$i",
-                "순위 $i"
-            ))
-        }
-        searchMultiAdapter.submitList(rankList.toList())
+        mainViewModel.getHotTopic("10")
     }
+
+    private fun observeLifeCycle() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                mainViewModel.search.collectLatest { response ->
+                    response.result?.let {
+                        searchMultiAdapter.submitList(it)
+                    }
+                }
+            }
+        }
+    }
+
     private fun changeSearchResultAdapter(){
         binding.fragmentSearchEt.setupSearchButtonWithAction()
     }

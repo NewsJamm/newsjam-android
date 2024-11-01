@@ -27,5 +27,14 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
                 //토큰 서버로 전달
             }
         }
+
+        binding.activityLoginSocial2Bt.setOnClickListener {
+            lifecycleScope.launch {
+                val token = GlobalApplication.instance.tokenManager.getFireBaseToken.first()
+                Log.d("토큰 보기", "$token")
+                findNavController().navigate(R.id.action_loginFragment_to_loginEmailFragment)
+                //토큰 서버로 전달
+            }
+        }
     }
 }

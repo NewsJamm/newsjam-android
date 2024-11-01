@@ -13,6 +13,9 @@ import com.example.newsjam_android.databinding.ActivityMainBinding
 import com.example.newsjam_android.ui.base.BaseActivity
 import com.example.newsjam_android.ui.view.adapter.ChattingAdapter
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private lateinit var navController: NavController
