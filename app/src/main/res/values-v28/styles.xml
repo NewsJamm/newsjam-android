@@ -31,6 +31,7 @@
         <item name="lineHeight">16dp</item>
     </style>
 
+
     <style name="bold_text.16dp.24he">
         <item name="android:textSize">16sp</item>
         <item name="lineHeight">24dp</item>
@@ -101,11 +102,15 @@
     <style name="TabStyle" parent="Widget.MaterialComponents.TabLayout">
         <item name="android:background">@drawable/selector_tab</item>
     </style>
-
     <style name="tabTextStyle">
         <item name="android:textSize">14sp</item>
         <item name="lineHeight">16dp</item>
-        <item name="android:layout_weight">400</item>
     </style>
+    <style name="weight_16dp">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="lineHeight">16dp</item>
+    </style>
+
 
 </resources>

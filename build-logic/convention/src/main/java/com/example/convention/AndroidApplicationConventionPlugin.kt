@@ -20,6 +20,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 lint {
                     targetSdk = 34
                 }
+
             }
         }
     }

@@ -24,4 +24,7 @@
     <string name="confirm_withdraw">정말 탈퇴하시겠어요?</string>
     <string name="withdraw_ok">탈퇴</string>
     <string name="withdraw_cancel">취소</string>
+    <string name="server_client_id">219000109911-r9jolu7n6nnbsc5gl1p69j34msvdvuup.apps.googleusercontent.com</string>
+    <string name="next">다음</string>
+    <string name="last">마지막</string>
 </resources>

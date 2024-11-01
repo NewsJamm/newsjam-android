@@ -10,8 +10,8 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
-import com.example.newsjam_android.data.di.AppCoroutineScope
-import com.example.newsjam_android.domain.extention.TokenManager
+import com.example.data.di.AppCoroutineScope
+import com.example.data.extensions.TokenManager
 import com.google.firebase.messaging.FirebaseMessaging
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope

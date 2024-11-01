@@ -10,7 +10,7 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/fragment_news_category_tb"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_height="32dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -20,8 +20,9 @@
             app:tabSelectedTextColor="@color/main_red"
             app:tabIndicatorHeight="0dp"
             app:tabMode="fixed"
+            app:tabTextAppearance="@style/weight_16dp"
             app:tabRippleColor="@android:color/transparent"
-            app:tabTextColor="@color/category_text_color" />
+            app:tabTextColor="@color/withdraw_cancel_bt_color" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fragment_news_category_rv"

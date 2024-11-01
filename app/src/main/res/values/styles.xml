@@ -26,7 +26,11 @@
         <item name="android:textSize">16sp</item>
         <item name="lineHeight">24dp</item>
     </style>
-
+    <style name="weight_16dp">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textFontWeight">550</item>
+        <item name="lineHeight">16dp</item>
+    </style>
 
     <style name="text_12dp">
         <item name="android:textSize">12sp</item>

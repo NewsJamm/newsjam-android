@@ -10,8 +10,6 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
-
-
     }
 }
 dependencyResolutionManagement {
@@ -28,3 +26,7 @@ rootProject.name = "newsjam-android"
 include(":app")
 include(":core")
 include(":feature")
+include(":core:model")
+include(":core:database")
+include(":core:data")
+include(":core:domain")

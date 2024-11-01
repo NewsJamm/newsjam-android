@@ -36,7 +36,7 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>(R.layout.fragment_news) {
         TabLayoutMediator(binding.fragmentNewsTb, binding.fragmentNewsVp) { tab, position ->
             tab.text = tabList[position]
         }.attach()
-        setTabItemMargin(binding.fragmentNewsTb, 8)
+        setTabItemMargin(binding.fragmentNewsTb, 16)
 
         binding.fragmentNewsTb.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {

@@ -6,7 +6,7 @@
 
         <variable
             name="resultType"
-            type="com.example.newsjam_android.data.model.RankType.HopTopicType" />
+            type="com.example.data.model.RankType.HopTopicType" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

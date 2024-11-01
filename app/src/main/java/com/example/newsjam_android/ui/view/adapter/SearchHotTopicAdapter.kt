@@ -2,7 +2,7 @@ package com.example.newsjam_android.ui.view.adapter
 
 import androidx.databinding.ViewDataBinding
 import com.example.newsjam_android.R
-import com.example.newsjam_android.data.model.RankType
+import com.example.data.model.RankType
 import com.example.newsjam_android.databinding.ItemSearchBinding
 import com.example.newsjam_android.databinding.ItemSearchHotTopicBinding
 import com.example.newsjam_android.GlobalApplication

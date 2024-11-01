@@ -22,7 +22,10 @@ internal fun Project.configureKotlinAndroid(
         compileSdk = 34
 
         defaultConfig {
-            minSdk = 26
+            minSdk = 34
+
+            testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+            vectorDrawables.useSupportLibrary = true
         }
         // 뷰 바인딩 활성화
         buildFeatures {
