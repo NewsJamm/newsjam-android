@@ -4,7 +4,7 @@
     <data>
         <variable
             name="scrapType"
-            type="com.example.newsjam_android.data.model.ScrapType" />
+            type="com.example.data.model.ScrapType" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

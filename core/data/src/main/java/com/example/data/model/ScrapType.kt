@@ -1,6 +1,4 @@
-package com.example.newsjam_android.data.model
-
-import com.example.data.model.RankType
+package com.example.data.model
 
 data class ScrapType(
     val searchResultType: RankType.SearchResultType = RankType.SearchResultType(

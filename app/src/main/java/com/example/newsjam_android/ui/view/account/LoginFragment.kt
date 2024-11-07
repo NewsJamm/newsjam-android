@@ -1,5 +1,6 @@
 package com.example.newsjam_android.ui.view.account
 
+import android.content.Intent
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -7,6 +8,7 @@ import com.example.newsjam_android.GlobalApplication
 import com.example.newsjam_android.R
 import com.example.newsjam_android.databinding.FragmentLoginBinding
 import com.example.newsjam_android.ui.base.BaseFragment
+import com.example.newsjam_android.ui.view.home.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -32,7 +34,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
             lifecycleScope.launch {
                 val token = GlobalApplication.instance.tokenManager.getFireBaseToken.first()
                 Log.d("토큰 보기", "$token")
-                findNavController().navigate(R.id.action_loginFragment_to_loginEmailFragment)
+                if(token.isNullOrBlank()) {
+                    findNavController().navigate(R.id.action_loginFragment_to_loginEmailFragment)
+                }
+                else{
+                    startActivity(Intent(requireActivity(),MainActivity::class.java))
+                    requireActivity().finish()
+                }
                 //토큰 서버로 전달
             }
         }

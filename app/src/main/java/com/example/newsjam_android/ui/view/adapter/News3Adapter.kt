@@ -1,7 +1,7 @@
 package com.example.newsjam_android.ui.view.adapter
 
 import com.example.newsjam_android.R
-import com.example.newsjam_android.data.model.NewsItem3
+import com.example.data.model.NewsItem3
 import com.example.newsjam_android.databinding.ItemNews3Binding
 import com.example.newsjam_android.GlobalApplication
 import com.example.newsjam_android.ui.base.BaseAdapter
@@ -20,12 +20,14 @@ class News3Adapter : BaseAdapter<NewsItem3, ItemNews3Binding>(
     override fun bind(binding: ItemNews3Binding, item: NewsItem3) {
         with(binding) {
             newsItem3 = item
-            GlobalApplication.loadCropRoundedSquareImage(
-                item3NewsIv.context,
-                item3NewsIv,
-                item.newsItem.profile,
-                8
-            )
+            item.newsItem.profile?.let {
+                GlobalApplication.loadCropRoundedSquareImage(
+                    item3NewsIv.context,
+                    item3NewsIv,
+                    it,
+                    8
+                )
+            }
         }
     }
 }

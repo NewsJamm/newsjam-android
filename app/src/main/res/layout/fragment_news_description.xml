@@ -3,7 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.view.news.NewsDescriptionFragment">
-
+<data>
+    <variable
+        name="newsData"
+        type="com.example.data.model.NewsItem" />
+</data>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/fragment_news_description_ns"
@@ -20,21 +24,25 @@
             <TextView
                 android:id="@+id/fragment_news_description_title_tv"
                 style="@style/bold_text.20dp"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="@string/news_title"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@{newsData.title}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/fragment_news_issuer_tv"
                 style="@style/text8dp"
-                android:layout_width="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="발행사 0000-00-00-00 00:00"
                 android:textColor="@color/issuer_text_color"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/fragment_news_description_title_tv"
                 app:layout_constraintTop_toBottomOf="@id/fragment_news_description_title_tv" />
 
@@ -60,10 +68,12 @@
             <TextView
                 android:id="@+id/fragment_news_text_title_tv"
                 style="@style/bold_text.14dp"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:layout_marginTop="32dp"
-                android:text="뉴스 텍스트"
+                android:text="@{newsData.content}"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/fragment_news_scrap_iv"
                 app:layout_constraintTop_toBottomOf="@id/fragment_news_scrap_iv" />
 
@@ -72,10 +82,11 @@
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:src="@color/empty_screen__color"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/fragment_news_text_title_tv"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fragment_news_text_title_tv" />
 
             <TextView

@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
 
-    lateinit var accountViewModel : AccountViewModel
+    private lateinit var accountViewModel : AccountViewModel
 
     private lateinit var navController: NavController
     override fun setLayout() {
@@ -23,8 +23,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         val host = supportFragmentManager.findFragmentById(binding.activityLoginContainerView.id) as NavHostFragment
         navController = host.navController
         accountViewModel = ViewModelProvider(this)[AccountViewModel::class.java]
-
     }
-
 
 }

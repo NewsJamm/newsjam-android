@@ -1,7 +1,7 @@
 package com.example.newsjam_android.ui.view.adapter
 
 import com.example.newsjam_android.R
-import com.example.newsjam_android.data.model.NewsItem
+import com.example.data.model.NewsItem
 import com.example.newsjam_android.databinding.ItemNews4Binding
 import com.example.newsjam_android.GlobalApplication
 import com.example.newsjam_android.ui.base.BaseAdapter
@@ -20,7 +20,11 @@ class News4Adapter(private val adapterItemClickedListener: AdapterItemClickedLis
     override fun bind(binding: ItemNews4Binding, item: NewsItem) {
         with(binding) {
             newsItem = item
-            GlobalApplication.loadCropImage(binding.itemNewsIv.context, binding.itemNewsIv, item.profile)
+            item.profile?.let {
+                GlobalApplication.loadCropImage(binding.itemNewsIv.context, binding.itemNewsIv,
+                    it
+                )
+            }
 
             binding.root.setOnClickListener{
                 adapterItemClickedListener.onClick(item)

@@ -71,7 +71,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_sea
 
     private fun changeRankRecyclerView(){
         showHotTopicTitle()
-        mainViewModel.getHotTopic("10")
+        mainViewModel.getHotTopicSearch("10")
     }
 
     private fun observeLifeCycle() {

@@ -15,13 +15,15 @@ import com.example.newsjam_android.databinding.FragmentLoginEmailBinding
 import com.example.newsjam_android.ui.base.BaseFragment
 import com.example.newsjam_android.ui.view.home.MainActivity
 import com.example.newsjam_android.ui.view.viewmodel.AccountViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class LoginEmailFragment : BaseFragment<FragmentLoginEmailBinding>(R.layout.fragment_login_email) {
 
-    val accountViewModel : AccountViewModel by viewModels()
-    val signInDTO = SignInDTO("","")
+    private val accountViewModel : AccountViewModel by viewModels()
+    private val signInDTO = SignInDTO("","")
 
     override fun setLayout() {
         setOnClickedButton()

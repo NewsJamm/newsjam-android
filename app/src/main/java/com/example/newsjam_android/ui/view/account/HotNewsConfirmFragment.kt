@@ -6,7 +6,9 @@ import com.example.newsjam_android.R
 import com.example.newsjam_android.databinding.HotNewsConfirmFragmentBinding
 import com.example.newsjam_android.ui.base.BaseFragment
 import com.example.newsjam_android.ui.view.home.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HotNewsConfirmFragment :
     BaseFragment<HotNewsConfirmFragmentBinding>(R.layout.hot_news_confirm_fragment) {
 

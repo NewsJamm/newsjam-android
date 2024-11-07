@@ -3,18 +3,19 @@ package com.example.newsjam_android.ui.view.adapter
 import android.view.View
 import androidx.databinding.ViewDataBinding
 import com.example.newsjam_android.R
-import com.example.newsjam_android.data.model.ChatMessage
-import com.example.newsjam_android.data.model.NewsItem3
+import com.example.data.model.ChatMessage
 import com.example.newsjam_android.databinding.ItemAiChatBinding
 import com.example.newsjam_android.databinding.ItemAppChatBinding
 import com.example.newsjam_android.databinding.ItemHumanChatBinding
-import com.example.newsjam_android.databinding.ItemNews3Binding
-import com.example.newsjam_android.databinding.LayoutChatBottomSheetBinding
-import com.example.newsjam_android.ui.base.BaseAdapter
 import com.example.newsjam_android.ui.base.BaseDiffCallback
 import com.example.newsjam_android.ui.base.BaseMultiAdapter
+import com.example.newsjam_android.ui.view.listener.AdapterItemClickedListener
+import dagger.hilt.android.AndroidEntryPoint
 
-class ChattingAdapter : BaseMultiAdapter<ChatMessage, ViewDataBinding>(
+
+class ChattingAdapter(
+    private val itemClickedListener: AdapterItemClickedListener
+) : BaseMultiAdapter<ChatMessage, ViewDataBinding>(
     BaseDiffCallback(
         itemsTheSame = { oldItem, newItem -> oldItem == newItem },
         contentsTheSame = { oldItem, newItem -> oldItem == newItem }
@@ -53,6 +54,9 @@ class ChattingAdapter : BaseMultiAdapter<ChatMessage, ViewDataBinding>(
                         itemAppIv.visibility = View.GONE
                         itemAppTopMessageTv.visibility = View.GONE
                     }
+                }
+                binding.root.setOnClickListener{
+                    itemClickedListener.onClick(item)
                 }
             }
         }

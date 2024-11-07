@@ -1,6 +1,6 @@
-package com.example.newsjam_android.data.model
+package com.example.data.model
 
 data class NewsItem3 (
-    val newsItem : NewsItem ,
-    val description : String
+    val newsItem : NewsItem = NewsItem(),
+    val description : String = ""
 )

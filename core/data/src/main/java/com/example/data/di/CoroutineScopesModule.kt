@@ -1,7 +1,7 @@
 package com.example.data.di
 
-import com.example.newsjam_android.data.network.NiaDispatchers.Default
-import com.example.newsjam_android.data.network.NiaDispatchers.IO
+import com.example.data.network.NiaDispatchers.Default
+import com.example.data.network.NiaDispatchers.IO
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

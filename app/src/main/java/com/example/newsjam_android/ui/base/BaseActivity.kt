@@ -9,6 +9,7 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.viewbinding.ViewBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 abstract class BaseActivity<VB: ViewBinding>(@LayoutRes private val layoutRes: Int):
     AppCompatActivity() {

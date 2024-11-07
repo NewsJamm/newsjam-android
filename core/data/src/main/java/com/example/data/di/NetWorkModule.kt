@@ -1,6 +1,7 @@
 package com.example.data.di
 
 import com.example.data.extensions.AccessTokenInterceptor
+import com.example.data.extensions.ResponseInterceptor
 import com.example.data.extensions.TokenManager
 import dagger.Module
 import dagger.Provides
@@ -34,6 +35,12 @@ object NetworkModule {
         return AccessTokenInterceptor(tokenManager)
     }
 
+    @Singleton
+    @Provides
+    fun provideResponseTokenInterceptor(tokenManager: TokenManager): ResponseInterceptor {
+        return ResponseInterceptor(tokenManager)
+    }
+
 
     @Provides
     @Singleton
@@ -43,6 +50,7 @@ object NetworkModule {
     @Provides
     @Named("defaultOkHttpClient")
     fun provideOkHttpClient(
+        responseInterceptor: ResponseInterceptor,
         httpLoggingInterceptor: HttpLoggingInterceptor,
         accessTokenInterceptor: AccessTokenInterceptor,
     ): OkHttpClient {
@@ -50,6 +58,7 @@ object NetworkModule {
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
+            .addInterceptor(responseInterceptor)
             .addInterceptor(httpLoggingInterceptor)
             .addInterceptor(accessTokenInterceptor)
             .build()

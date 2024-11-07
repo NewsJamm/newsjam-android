@@ -3,7 +3,7 @@
     <data>
         <variable
             name="newsItem2"
-            type="com.example.newsjam_android.data.model.NewsItem2" />
+            type="com.example.data.model.NewsItem2" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"

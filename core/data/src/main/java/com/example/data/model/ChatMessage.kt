@@ -1,4 +1,4 @@
-package com.example.newsjam_android.data.model
+package com.example.data.model
 
 sealed class ChatMessage {
     data class AIMessage(val message: String) : ChatMessage()

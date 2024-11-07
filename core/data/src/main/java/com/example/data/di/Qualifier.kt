@@ -1,6 +1,6 @@
 package com.example.data.di
 
-import com.example.newsjam_android.data.network.NiaDispatchers
+import com.example.data.network.NiaDispatchers
 import javax.inject.Qualifier
 
 @Qualifier

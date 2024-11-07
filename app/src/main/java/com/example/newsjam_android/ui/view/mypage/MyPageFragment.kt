@@ -16,7 +16,9 @@ import com.example.newsjam_android.ui.base.BaseFragment
 import com.example.newsjam_android.ui.view.account.LoginActivity
 import com.example.newsjam_android.ui.view.dialog.WithDrawDialog
 import com.example.newsjam_android.ui.view.listener.DialogConfirmListener
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MyPageFragment : BaseFragment<FragmentMyPageBinding>(R.layout.fragment_my_page),
     DialogConfirmListener {
     lateinit var tagCloud: TagCloud

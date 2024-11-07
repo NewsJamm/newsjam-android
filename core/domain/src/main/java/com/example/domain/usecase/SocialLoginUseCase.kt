@@ -5,6 +5,7 @@ import com.example.data.request.SignInDTO
 import com.example.data.request.SocialLoginDTO
 import com.example.data.response.BaseResponse
 import com.example.data.response.SignInData
+import com.example.data.response.SignInResponse
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -15,7 +16,7 @@ class SocialLoginUseCase @Inject constructor(
         return accountRepository.postSocialLogIn(socialLoginDTO)
     }
 
-    suspend operator fun invoke(signInDTO: SignInDTO) : Flow<SignInData> {
+    suspend operator fun invoke(signInDTO: SignInDTO) : Flow<BaseResponse<SignInResponse>> {
         return accountRepository.postSignIn(signInDTO)
     }
 }

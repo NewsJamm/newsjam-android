@@ -1,4 +1,4 @@
-package com.example.newsjam_android.data.network
+package com.example.data.network
 
 
 enum class NiaDispatchers {
